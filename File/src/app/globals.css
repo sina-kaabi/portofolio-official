@@ -1,0 +1,483 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+Author       : amitjs
+Template Name: NetGrid - Next JS Portfolio Template
+Version      : 1.0.1
+*/
+
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+/* Reset Css */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background: #10182b;
+  color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Button Design */
+.my__btn {
+  padding: 10px 25px;
+  border: 2px solid #17b978;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  font-size: 16px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  z-index: 1;
+  font-family: inherit;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.my__btn::before {
+  content: "";
+  width: 0;
+  height: 400%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  -ms-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #17b978;
+  -webkit-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.my__btn:hover::before {
+  width: 120%;
+}
+
+.my__btn:hover {
+  color: #fff;
+}
+
+.my__btn__two {
+  margin-top: 20px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.my__btn__two {
+  width: 12rem;
+  height: auto;
+}
+
+.my__btn__two .circle {
+  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -o-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #17b978;
+  border-radius: 1.625rem;
+}
+
+.my__btn__two .circle .icon {
+  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -o-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
+
+.my__btn__two .circle .icon.arrow {
+  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -o-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+
+.my__btn__two .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.my__btn__two .button-text {
+  -webkit-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -o-transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: #17b978;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.my__btn__two:hover .circle {
+  width: 100%;
+}
+
+.my__btn__two:hover .circle .icon.arrow {
+  background: #fff;
+  -webkit-transform: translate(1rem, 0);
+  -ms-transform: translate(1rem, 0);
+  transform: translate(1rem, 0);
+}
+
+.my__btn__two:hover .button-text {
+  color: #fff;
+}
+
+/* =============== MasterLayout =============== */
+
+.sidebar__section {
+  width: 100px;
+  border-right: 1px solid rgba(221, 221, 221, 0.171);
+  height: 100vh;
+  position: fixed;
+}
+.main__body {
+  padding-left: 100px;
+}
+.sidebar__section .menu__section ul li {
+  padding: 5px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 50px;
+}
+.sidebar__section .menu__section ul li a {
+  display: inline-block;
+  background: #dddddd31;
+  padding: 18px 18px;
+  border-radius: 50px;
+
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.sidebar__section .menu__section ul li a.active,
+.sidebar__section .menu__section ul li a:hover {
+  background: #17b978;
+}
+
+/*=============== Home Component ===============*/
+
+.home__component .home__content .img__file img {
+  width: 260px;
+  border-radius: 10px;
+}
+
+/*=============== About Component ===============*/
+.about__component .img__file img::after {
+  position: absolute;
+  content: "";
+  background: #17b978;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.resume__file .intro__file {
+  border-left: 3px solid #373d4d;
+  padding-left: 58px;
+  border-radius: 2px;
+}
+.resume__file .intro__file .items h3::after {
+  background-color: #10182b;
+  border: 3px solid #373d4d;
+  border-radius: 50%;
+  content: "";
+  height: 15px;
+  left: -67px;
+  position: absolute;
+  top: 10px;
+  width: 15px;
+  z-index: 9;
+}
+.resume__file .intro__file .items h3::before {
+  border-radius: 5px;
+  content: "";
+  height: 3px;
+  left: -78px;
+  position: absolute;
+  top: 16px;
+  width: 65px;
+  z-index: 9;
+  background: #373d4d;
+}
+
+/*=============== Service Component ===============*/
+.service__component .service__info .item {
+  background: transparent;
+  border: 1px solid #4a4a4a;
+  border-radius: 10px;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  position: relative;
+  overflow: hidden;
+}
+.service__component .service__info .item:hover {
+  background: #17b978;
+  border-color: #17b978 !important;
+}
+
+/*=============== Portfolio Component ===============*/
+
+.portfolio__component .portfolio__tabs__body .react-tabs__tab-list {
+  border-bottom: none;
+  margin: 0;
+  padding: 0;
+}
+.portfolio__component .portfolio__tabs__body .react-tabs__tab-list li {
+  margin-bottom: 10px;
+}
+.portfolio__component .portfolio__tabs__body .img__file {
+  overflow: hidden;
+  position: relative;
+}
+.portfolio__component .portfolio__tabs__body .img__file img {
+  background: rgba(51, 51, 51, 0.589);
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.portfolio__component .portfolio__tabs__body .overflow__intro {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #192c38;
+  width: 100%;
+  height: 55px;
+  -webkit-transform: translateY(60px);
+  -ms-transform: translateY(60px);
+  transform: translateY(60px);
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.portfolio__component .portfolio__tabs__body .img__file:hover img {
+  -webkit-transform: scale(110%);
+  -ms-transform: scale(110%);
+  transform: scale(110%);
+}
+.portfolio__component .portfolio__tabs__body .img__file:hover .overflow__intro {
+  -webkit-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+}
+
+.react-tabs__tab {
+  display: inline-block !important;
+  border: none !important;
+  border-bottom: none !important;
+  bottom: 0 !important;
+  position: relative !important;
+  list-style: none !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  background: #192c38 !important;
+  border-radius: 5px !important;
+  margin: 0 8px;
+  color: #17b878;
+  font-weight: 600;
+}
+
+.react-tabs__tab--selected {
+  background: #17b878 !important;
+  border-color: #17b878 !important;
+  color: #fff !important;
+  border-radius: 5px !important;
+}
+
+.react-tabs__tab:focus:after {
+  background: transparent !important;
+}
+
+/*=============== Blog Component ===============*/
+
+.blog__info .img__file {
+  overflow: hidden;
+}
+
+.blog__info .img__file img {
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.blog__info .img__file:hover img {
+  -webkit-transform: scale(110%);
+  -ms-transform: scale(110%);
+  transform: scale(110%);
+}
+
+/*=============== Responsive Mode ===============*/
+
+@media (max-width: 767px) {
+  .main__body {
+    padding-left: 0;
+  }
+  .sidebar__section {
+    left: 0;
+    right: auto;
+    bottom: 0;
+    top: auto;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    width: 100%;
+    display: block;
+    background: #373d4d;
+    padding: 8px;
+    z-index: 10;
+    height: auto;
+  }
+  .sidebar__section ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .sidebar__section .menu__section ul li a {
+    padding: 16px 16px;
+  }
+  .sidebar__section .menu__section ul li {
+    padding: 5px 5px;
+  }
+  .react-tabs__tab {
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 379px) {
+  .sidebar__section .menu__section ul li a {
+    padding: 12px 12px;
+  }
+  .sidebar__section .menu__section ul li {
+    padding: 3px 3px;
+  }
+}
+
+.radar-spinner,
+.radar-spinner * {
+  box-sizing: border-box;
+}
+.loading-data {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radar-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 60px;
+  position: relative;
+}
+
+.radar-spinner .circle {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  animation: radar-spinner-animation 2s infinite;
+}
+
+.radar-spinner .circle:nth-child(1) {
+  padding: calc(60px * 5 * 2 * 0 / 110);
+  animation-delay: 300ms;
+}
+
+.radar-spinner .circle:nth-child(2) {
+  padding: calc(60px * 5 * 2 * 1 / 110);
+  animation-delay: 300ms;
+}
+
+.radar-spinner .circle:nth-child(3) {
+  padding: calc(60px * 5 * 2 * 2 / 110);
+  animation-delay: 300ms;
+}
+
+.radar-spinner .circle:nth-child(4) {
+  padding: calc(60px * 5 * 2 * 3 / 110);
+  animation-delay: 0ms;
+}
+
+.radar-spinner .circle-inner,
+.radar-spinner .circle-inner-container {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: calc(60px * 5 / 110) solid transparent;
+}
+
+.radar-spinner .circle-inner {
+  border-left-color: #ff1d5e;
+  border-right-color: #ff1d5e;
+}
+
+@keyframes radar-spinner-animation {
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
