@@ -71,7 +71,7 @@ const AboutComponent = () => {
                             <li className="mb-2 text-sm text-slate-400">
                               Age:
                               <span className="pl-2 text-base font-medium text-slate-200">
-                                31
+                                30
                               </span>
                             </li>
                             <li className="mb-2 text-sm text-slate-400">
